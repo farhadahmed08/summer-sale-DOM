@@ -168,9 +168,9 @@
         
     
     <div >
-        <div id="coupon-part" >
+        <div >
           <h4 class="text-2xl font-medium">Have coupon?</h4>
-            <input class="border bg-white-200 rounded-lg " type="text" placeholder="Coupon code">
+            <input id="discount-coupon" class="border bg-white-200 rounded-lg " type="text" placeholder="Coupon code">
             <button id="coupn-btn"  class="bg-[#E527B2] py-1 px-3 rounded-xl text-white font-medium " >button</button>
 
         </div>
@@ -182,7 +182,7 @@
             <h2><strong class="text-xl">Discount:</strong> <span id="discount">00.00</span> TK</h2>
             <h2><strong class="text-xl">Total:</strong> <span id="totalPrice">00.00</span> TK</h2>
         </div>
-        <button  id="purchase-btn" class="bg-[#E527B2] py-2 px-14 mt-5 rounded-xl text-white font-medium " onclick="my_modal_1.showModal()"  >make Purchase</button>
+        <button disabled id="purchase-btn" class="bg-[#E527B2] py-2 px-14 mt-5 rounded-xl text-white font-medium " onclick="my_modal_1.showModal()"  >make Purchase</button>
         <dialog id="my_modal_1" class="modal">
           <form method="dialog" class="modal-box">
           <div class="card  ">

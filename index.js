@@ -1,4 +1,10 @@
 let total = 0;
+const purchaseBtn = document.getElementById('purchase-btn')
+const couponBtn = document.getElementById('coupn-btn')
+const discountInput =  document.getElementById('discount-coupon')
+const discountPrice = document.getElementById('discount')
+const totalPriceDis = document.getElementById('totalPrice')
+
 function handelClickBtn(target){
     const setProductContainer = document.getElementById('product-entry');
    const itemName = target.childNodes[5].childNodes[1].innerText;
@@ -8,26 +14,55 @@ function handelClickBtn(target){
    const itemPrice = target.childNodes[5].childNodes[3].innerText.split(' ')[0];
    total = parseFloat(total) + parseFloat(itemPrice);
    totalFloatPrice = total.toFixed(2);
-   console.log(totalFloatPrice)
    const firstTotal = document.getElementById('total').innerText = totalFloatPrice;
-   
-   const setDiscountContainer = document.getElementById('price-part').innerText;
-   const discount = .8*totalFloatPrice;
-   const finalDis = totalFloatPrice - discount;
-   finalDisFloat = finalDis.toFixed(2);
-   console.log(finalDisFloat)
-   const finalDiscount = document.getElementById('discount').innerText = 
-   finalDisFloat;
-    const totalPrice = totalFloatPrice-finalDisFloat;
-    totalPriceFloat = totalPrice.toFixed(2);
-    const finalTotalPrice = document.getElementById('totalPrice').innerText = 
-    totalPriceFloat;
-    
+    console.log(firstTotal)
    
 
+   if (firstTotal > 0) {
+    purchaseBtn.removeAttribute('disabled');
+} else {
+    purchaseBtn.setAttribute('disabled', 'true');
 }
+   
+
+   
+   
+
+   if (firstTotal >= 200) {
+    couponBtn.removeAttribute('disabled');
+} else {
+    couponBtn.setAttribute('disabled', 'true');
+}
+
+    
+}
+
+couponBtn.addEventListener('click', () => {
+    const discountCode = discountInput.value.trim();
+    if (discountCode === 'SELL200') {
+        const discountAmount = total * 0.8;
+        total -= discountAmount;
+        discountPrice.textContent = total.toFixed(2);
+        
+        
+
+        const x = total;
+        total = discountAmount - total;
+        totalPriceDis.textContent = total.toFixed(2)
+
+
+        // console.log(total)
+    }
+    
+    
+});
+
+
+
 
 document.getElementById('go-home').addEventListener('click',function(){
     location.reload();
 })
+
+
 
