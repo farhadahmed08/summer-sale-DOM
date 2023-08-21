@@ -27,3 +27,7 @@ function handelClickBtn(target){
 
 }
 
+document.getElementById('go-home').addEventListener('click',function(){
+    location.reload();
+})
+

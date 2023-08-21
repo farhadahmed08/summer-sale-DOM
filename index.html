@@ -17,6 +17,8 @@
         .font-sans{
             font-family: 'Work Sans', sans-serif;
         }
+
+      
     </style>
 </head>
 <body class="font-sans">
@@ -169,7 +171,7 @@
         <div id="coupon-part" >
           <h4 class="text-2xl font-medium">Have coupon?</h4>
             <input class="border bg-white-200 rounded-lg " type="text" placeholder="Coupon code">
-            <button class="bg-[#E527B2] py-1 px-3 rounded-xl text-white font-medium " >button</button>
+            <button id="coupn-btn"  class="bg-[#E527B2] py-1 px-3 rounded-xl text-white font-medium " >button</button>
 
         </div>
         <div id="product-entry" class="mt-6">
@@ -180,7 +182,25 @@
             <h2><strong class="text-xl">Discount:</strong> <span id="discount">00.00</span> TK</h2>
             <h2><strong class="text-xl">Total:</strong> <span id="totalPrice">00.00</span> TK</h2>
         </div>
-        <button class="bg-[#E527B2] py-2 px-14 mt-5 rounded-xl text-white font-medium" >make Purchase</button>
+        <button  id="purchase-btn" class="bg-[#E527B2] py-2 px-14 mt-5 rounded-xl text-white font-medium " onclick="my_modal_1.showModal()"  >make Purchase</button>
+        <dialog id="my_modal_1" class="modal">
+          <form method="dialog" class="modal-box">
+          <div class="card  ">
+          <figure><img src="./images/congo.png" alt="Shoes" /></figure>
+          <div class="card-body">
+          <h2 class="card-title pb-2 flex justify-center">Congratulations</h2>
+          <p class="text-center">Your Purchase the product</p>
+          
+        </div>
+    </div>
+    <div class="flex justify-around ">
+      <div class="modal-action">
+        <!-- if there is a button in form, it will close the modal -->
+        <button id="go-home" class="btn bg-[#E527B2] text-white">Go Home</button>
+      </div>
+    </div>
+  </form>
+</dialog>
     </div>
     
     
